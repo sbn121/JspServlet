@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>변수 사용해보기</h3>
+	<%! int sVal = 0; %><!-- 전역 변수 -->
+	<% int lVal = 0; %><!-- 로직코드(지역변수) -->
+	<p>sVal <%=++sVal %></p>
+	<p>lVal <%=++lVal %></p>
+	<%! String[] arr = {"T", "E", "S", "T"}; %>
+	<p><%=arr[0] %></p>
+	
+</body>
+</html>
