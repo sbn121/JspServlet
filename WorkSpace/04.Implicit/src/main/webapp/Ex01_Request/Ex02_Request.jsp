@@ -13,7 +13,7 @@
 			<input type="text" name="name<%=i%>" value="<%=i%>">
 			<%} %>
 			<input type="submit">
-	 </form>
+	 	</form>
 	
 </body>
 </html>

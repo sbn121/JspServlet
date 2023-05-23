@@ -17,7 +17,7 @@ public class Ex01_Request extends HttpServlet {
 		
 		// id != null 조건을 추가해주면 똑같은 처리가 가능함.
 		if("admin".equals(id)&&"admin1234".equals(pw)) {
-			// id<-String변수가 null일 경구 equals를 사용하면 nullpoinerException발생
+			// id<-String변수가 null일 경우 equals를 사용하면 nullpoinerException발생
 			
 			System.out.println("아이디 비밀번호 맞음 로그인");
 		}else {

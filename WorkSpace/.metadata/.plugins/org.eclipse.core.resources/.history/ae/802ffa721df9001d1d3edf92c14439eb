@@ -1,0 +1,6 @@
+package Controller;
+
+public class DTO {
+	int i = 0;
+	String str = "1234";
+}

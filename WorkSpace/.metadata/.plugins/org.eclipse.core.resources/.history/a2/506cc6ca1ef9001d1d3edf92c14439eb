@@ -1,0 +1,40 @@
+package Controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import sbn.SbnVO;
+
+
+@WebServlet("*.sbn")
+public class test extends HttpServlet {
+	RequestDispatcher rd;
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		if(req.getServletPath().equals("/list.sbn")) {
+			
+			List<SbnVO> list = new ArrayList<>();
+			
+			for(int i=0; i<10; i++) {
+			SbnVO vo = new SbnVO();
+			vo.setField1("필드1");
+			vo.setField2(10);
+			list.add(vo);
+			}
+			req.setAttribute("list", list);
+			rd = req.getRequestDispatcher("sbn/list.jsp");
+		}else {
+			System.out.println("잘못된 요청");
+		}
+		rd.forward(req, resp);
+	}
+	
+}
