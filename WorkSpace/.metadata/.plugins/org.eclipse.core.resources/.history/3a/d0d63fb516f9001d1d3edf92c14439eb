@@ -1,0 +1,9 @@
+package Controller;
+
+public class DTO {
+	int i;
+	String str;
+	public static void main(String[] args) {
+		rd = req.getRequestDispatcher("jstl/list.jsp");
+	}
+}
