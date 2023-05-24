@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+
 // 어떤글자.js <-로 끝나는 모든 것들을 요청받게. => *.js
 @WebServlet("*.js")
 public class JstlController extends HttpServlet {
@@ -23,6 +25,7 @@ public class JstlController extends HttpServlet {
 		//RequestDispacter <= req객체가 요청을 받고나서 다시 새로운 페이지로 요청을 넘겨야할때.(Forward)사용
 		//페이지를 보여줄지말지를 요청 온 Mapping 기준으로 분기 => list.js
 		if(req.getServletPath().equals("/list.js")) {
+			
 			req.setAttribute("key1", "값1");//forward로 요청을 넘길 때는 setAttribute를 통해 데이터 전달.
 			req.setAttribute("key2", "값2");//forward로 요청을 넘길 때는 setAttribute를 통해 데이터 전달.
 			req.setAttribute("key3", "값3");//forward로 요청을 넘길 때는 setAttribute를 통해 데이터 전달.

@@ -37,7 +37,7 @@
 				<li><a href="list.sbn">SBN</a></li>
 				<!-- list.sbn을 ㅇ -->
 				
-				<li><a href="#">게시판</a></li>
+				<li><a href="list.bat">게시판</a></li>
 			</ul>
 			<ul class="util">
 				<li><a href="#">로그인</a></li>

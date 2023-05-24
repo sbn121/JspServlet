@@ -1,0 +1,6 @@
+package customer;
+
+public class CustomerVO {
+	int id;
+	String name, gender, email, phone;
+}

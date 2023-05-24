@@ -1,0 +1,46 @@
+package sbn;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class SbnDAO {
+	public void test() {
+		String resource = "mybatis/conn.xml";
+		InputStream inputStream = null;
+		try {
+			inputStream = Resources.getResourceAsStream(resource);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		SqlSessionFactory sqlSessionFactory =
+		  new SqlSessionFactoryBuilder().build(inputStream);
+		
+		try (SqlSession session = sqlSessionFactory.openSession()) {
+			  int dualInt = session.selectOne("sbn.dual");
+			  //session.method(-> .insert, update, delete, selectOne, selectList )
+			  //selectOne . selectList
+			  //데이터 한 건, 여러 건 조회
+			  //selectOne("")=> parameter (statement)
+			  //mapper namespace.id
+			  //vo : getter & setter를 만들면 자동으로 되는 것은 bean(Spring 객체 만들 때만 사용됨)
+//			 SbnVO vo = session.selectOne("sbn.voselect");
+//			 System.out.println("==");
+			  //List<SbnVO> voList = session.selectList("sbn.listselect");
+			  //System.out.println("리스트 사이즈 : "+voList.size());
+			  
+			  //파라메터의 전송은 단 하나의 객체만 가능하자 => String, int, ArrayList, HashMap...
+			  
+			  //메소드가 같은 이름으로 여러 개 정의된 것 : 메소드 오버로딩
+			  String data = session.selectOne("sbn.selectwhere1", 1);
+			  System.out.println(data);
+			  
+			}
+	}
+}
