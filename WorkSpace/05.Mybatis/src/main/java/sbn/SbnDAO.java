@@ -20,7 +20,6 @@ public class SbnDAO {
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		SqlSessionFactory sqlSessionFactory =
@@ -50,7 +49,7 @@ public class SbnDAO {
 			  
 			  // 파라메터는 어떤 타입이든 상관없지만 하나만 전송할 수 있음. (Parameter Object)
 			  // 변수를 어러 개 가지고 있는 클래스를 만든다(구조가 DB와 같은 것 ==> VO, DTO 활용)
-			 // String data = session.selectOne("sbn.selectwhere1", 1);
+			  //String data = session.selectOne("sbn.selectwhere1", 1);
 			  //System.out.println(data);
 			  
 			  

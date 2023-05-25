@@ -32,7 +32,8 @@
 			</h1>
 			<ul id="gnb">
 				<li><a href="list.js">JSTL(TEST_DB)</a></li>
-				<li><a href="#">사원목록</a></li>
+				<!-- list.cu가 요청되면 요청을 받을  -->
+				<li><a href="list.cu">사원목록</a></li>
 				<li><a href="#">고객관리</a></li>
 				<li><a href="list.sbn">SBN</a></li>
 				<!-- list.sbn을 ㅇ -->
