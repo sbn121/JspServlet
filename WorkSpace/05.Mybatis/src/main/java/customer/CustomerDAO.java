@@ -31,13 +31,8 @@ public class CustomerDAO {
 	
 	
 	public void test() {
-		
 			int i = sql.selectOne("cu.select1");
 			System.out.println(i);
-
-			  
-			
-		
 	}
 	public List<CustomerVO> listSelect() {
 		List<CustomerVO> list = sql.selectList("cu.list");
@@ -61,11 +56,9 @@ public class CustomerDAO {
 		System.out.println(result);
 	}
 	
-	
 	public void insert(CustomerVO vo) {
 		int result = sql.insert("cu.insert", vo);
 		sql.commit();
 		System.out.println(result);
-		
 	}
 }

@@ -28,10 +28,9 @@ public class CustomerController extends HttpServlet {
 		System.out.println(mapping);
 		if(mapping.equals("/list.cu")) {
 			System.out.println("list.jsp여는 처리를 넣어줌");
-			
-			rd = req.getRequestDispatcher("customer/list.jsp");
 			List<CustomerVO> list = new CustomerDAO().listSelect();
 			req.setAttribute("list", list); //jsp페이지에 조회된 결과를 가져옴
+			rd = req.getRequestDispatcher("customer/list.jsp");
 		}else if(mapping.equals("/detail.cu")){
 			// url또는 get post방식으로 servlet으로 오는 모든 데이터는 parameter(String)
 			// req (요청), response(응답)
